@@ -290,6 +290,29 @@ input:focus-visible {
 	font-size: 1rem;
 }
 
+.signup select {
+	appearance: none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	border: 1px solid var(--ring);
+	border-radius: 999px;
+	padding: 0.8rem 2.6rem 0.8rem 1rem;
+	font-size: 1rem;
+	line-height: 1.2;
+	background: #fff;
+	color: var(--ink);
+	background-image:
+		linear-gradient(45deg, transparent 50%, var(--navy) 50%),
+		linear-gradient(135deg, var(--navy) 50%, transparent 50%);
+	background-position:
+		calc(100% - 1rem) calc(50% - 2px),
+		calc(100% - 0.7rem) calc(50% - 2px);
+	background-size:
+		0.4rem 0.4rem,
+		0.4rem 0.4rem;
+	background-repeat: no-repeat;
+}
+
 .contact,
 .tagline {
 	margin: 1rem 0 0;
@@ -339,7 +362,8 @@ input:focus-visible {
 	}
 
 	.signup {
-		grid-template-columns: 1fr auto;
+		grid-template-columns: repeat(3, minmax(0, 1fr)) auto;
+		align-items: center;
 	}
 }
 

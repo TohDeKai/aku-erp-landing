@@ -1,10 +1,44 @@
 <section id="request-access" class="section reveal cta-section">
-	<h2>Join Us in Building the Digital Backbone of Eastern Enterprise</h2>
-	<form class="signup" action="#" method="post">
-		<label class="sr-only" for="email">Email address</label>
-		<input id="email" name="email" type="email" placeholder="you@company.com" required />
-		<button class="btn btn-primary" type="submit">Request Access</button>
-	</form>
-	<p class="contact">jarrentoh@outlook.com | +65 9070 0016 | @jarrentoh</p>
-	<p class="tagline">Powering the Future of Eastern SMEs</p>
+  <h2>Join Us in Building the Digital Backbone of Eastern Enterprise</h2>
+  <form class="signup" action="https://api.web3forms.com/submit" method="post">
+    <input
+      type="hidden"
+      name="access_key"
+      value="babf7e50-4556-4d45-9a0e-177546453f51"
+    />
+    <input
+      type="hidden"
+      name="subject"
+      value="AKU ERP - Request Access Submission"
+    />
+    <input type="hidden" name="from_name" value="AKU ERP Landing Page" />
+    <input
+      type="checkbox"
+      name="botcheck"
+      class="sr-only"
+      tabindex="-1"
+      autocomplete="off"
+    />
+    <label class="sr-only" for="name">Full name</label>
+    <input id="name" name="name" type="text" placeholder="Your name" required />
+    <label class="sr-only" for="email">Email address</label>
+    <input
+      id="email"
+      name="email"
+      type="email"
+      placeholder="you@company.com"
+      required
+    />
+    <label class="sr-only" for="interestType">Interest type</label>
+    <select id="interestType" name="interest_type" required>
+      <option value="" disabled selected>I am a...</option>
+      <option value="user">User</option>
+      <option value="investor">Investor</option>
+      <option value="design_partner">Design Partner</option>
+      <option value="manufacturer_partner">Manufacturer Partner</option>
+      <option value="advisor">Advisor</option>
+    </select>
+    <button class="btn" type="submit">Request Access</button>
+  </form>
+  <p class="tagline">Powering the Future of Eastern SMEs</p>
 </section>
