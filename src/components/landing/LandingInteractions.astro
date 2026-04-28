@@ -1,0 +1,46 @@
+---
+const sections = [
+	'hero',
+	'problem',
+	'how-it-works',
+	'solution',
+	'market',
+	'why-now',
+	'competition',
+	'team',
+	'request-access'
+];
+---
+
+<script define:vars={{ sections }}>
+	const nodes = document.querySelectorAll('.reveal');
+	const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	if (reducedMotion) {
+		nodes.forEach((node) => node.classList.add('is-visible'));
+	} else {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				for (const entry of entries) {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-visible');
+						observer.unobserve(entry.target);
+					}
+				}
+			},
+			{ threshold: 0.15 }
+		);
+
+		nodes.forEach((node) => observer.observe(node));
+	}
+
+	for (const id of sections) {
+		const anchors = document.querySelectorAll(`a[href="#${id}"]`);
+		anchors.forEach((anchor) => {
+			anchor.addEventListener('click', (event) => {
+				event.preventDefault();
+				document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+			});
+		});
+	}
+</script>
