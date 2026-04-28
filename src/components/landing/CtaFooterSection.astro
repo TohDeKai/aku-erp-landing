@@ -1,6 +1,6 @@
 <section id="request-access" class="section reveal cta-section">
   <h2>Join Us in Building the Digital Backbone of Eastern Enterprise</h2>
-  <form class="signup" action="https://api.web3forms.com/submit" method="post">
+  <form class="signup js-access-form" action="https://api.web3forms.com/submit" method="post">
     <input
       type="hidden"
       name="access_key"
@@ -38,7 +38,19 @@
       <option value="manufacturer_partner">Manufacturer Partner</option>
       <option value="advisor">Advisor</option>
     </select>
-    <button class="btn" type="submit">Request Access</button>
+    <button class="btn js-submit-btn" type="submit">Request Access</button>
   </form>
+  <div class="form-toast" role="status" aria-live="polite"></div>
   <p class="tagline">Powering the Future of Eastern SMEs</p>
 </section>
+
+<script>
+  import { setupWeb3FormToast } from "../../utils/web3FormToast";
+
+  setupWeb3FormToast({
+    sectionId: "request-access",
+    formSelector: ".js-access-form",
+    submitButtonSelector: ".js-submit-btn",
+    toastSelector: ".form-toast"
+  });
+</script>
